@@ -37,11 +37,13 @@ async logout(){
      
 async login(){ 
       try { 
-        const { user, session, error } = await supabase.auth.signIn({ 
-          provider: 'google', 
-        }); 
+        const { user, session, error } = await supabase.auth.signIn({
+  provider: 'github',
+})
         if (error) throw error; 
       } catch (error) { 
+      
+      
         alert(error.error_description || error.message); 
       }  
     }
